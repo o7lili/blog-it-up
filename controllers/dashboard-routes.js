@@ -15,7 +15,8 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'post_url',
       'title',
-      'created_at',
+      'created_at', 
+      'content',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
@@ -50,6 +51,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'post_url',
       'title',
       'created_at',
+      'content',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
@@ -68,6 +70,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     ]
   })
     .then(dbPostData => {
+      console.log('line 73', dbPostData);
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
         
