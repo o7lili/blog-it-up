@@ -1,6 +1,6 @@
 # blog-it-up
 
-deployed app: https://murmuring-chamber-78305.herokuapp.com/ 
+deployed app: https://damp-chamber-78850.herokuapp.com/ 
 
 ## Description
 uses mySQL, Sequelize, Express, and Handlebars. Simple "tech blog" site where visitors can see posts on the homepage. When user is signed up or logged in, they can create and edit posts, view their dashboard that has their own posts, and comment on existing posts. When idle for an hour, the user will be automatically logged out.
